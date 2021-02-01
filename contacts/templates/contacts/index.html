@@ -14,30 +14,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>
-                <a href="#"> John</a>
-            </td>
-            <td>Fitzgerald Kennedy</td>
-            <td>1 202 456-2121</td>
-            <td>Former President of the United States</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="#"> Barack</a>
-            </td>
-            <td>Hussein Obama II</td>
-            <td> 1 202 456-2121</td>
-            <td>Former President of the United States</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="#"> Getúlio</a>
-            </td>
-            <td>Dornelles Vargas</td>
-            <td>55 61 3411-1221</td>
-            <td>Former President of Brazil</td>
-        </tr>
+
+        {% for contato in contacts %}
+            <tr>
+                <td>
+                    <a href="#"> {{ contato.first_name }}</a>
+                </td>
+                <td>{{ contato.last_name }}</td>
+                <td>{{ contato.telephone }}</td>
+                <td>{{ contato.category }}</td>
+            </tr>
+        {% endfor %}
+
         </tbody>
     </table>
 {% endblock %}
