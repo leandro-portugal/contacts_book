@@ -15,14 +15,14 @@
         </thead>
         <tbody>
 
-        {% for contato in contacts %}
+        {% for contact in contacts %}
             <tr>
                 <td>
-                    <a href="#"> {{ contato.first_name }}</a>
+                    <a href="{% url 'show_contact' contact.id %}"> {{ contact.first_name }}</a>
                 </td>
-                <td>{{ contato.last_name }}</td>
-                <td>{{ contato.telephone }}</td>
-                <td>{{ contato.category }}</td>
+                <td>{{ contact.last_name }}</td>
+                <td>{{ contact.telephone }}</td>
+                <td>{{ contact.category }}</td>
             </tr>
         {% endfor %}
 
