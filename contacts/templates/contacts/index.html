@@ -16,14 +16,16 @@
         <tbody>
 
         {% for contact in contacts %}
-            <tr>
-                <td>
-                    <a href="{% url 'show_contact' contact.id %}"> {{ contact.first_name }}</a>
-                </td>
-                <td>{{ contact.last_name }}</td>
-                <td>{{ contact.telephone }}</td>
-                <td>{{ contact.category }}</td>
-            </tr>
+            {% if contact.show %}
+                <tr>
+                    <td>
+                        <a href="{% url 'show_contact' contact.id %}"> {{ contact.first_name }}</a>
+                    </td>
+                    <td>{{ contact.last_name }}</td>
+                    <td>{{ contact.telephone }}</td>
+                    <td>{{ contact.category }}</td>
+                </tr>
+            {% endif %}
         {% endfor %}
 
         </tbody>
